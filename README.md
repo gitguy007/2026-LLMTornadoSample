@@ -1,54 +1,57 @@
-🌪️ 2026-LLMTornadoSample
+# 🌪️ 2026-LLMTornadoSample
 
-A sample reference application demonstrating multimodal AI support workflows using LlmTornado — a .NET AI orchestration toolkit.
+A .NET sample project demonstrating how to use **LlmTornado** for multimodal AI workflows (text, image, audio).
 
-This project contains example code showing how to use the LlmTornado SDK for advanced AI tasks such as text, speech, image, and multimodal prompt handling using .NET.
+This repository provides a minimal working example showing how to integrate and execute LLM-powered support workflows using C#.
 
-✅ What This Is
+---
 
-This repository provides:
+## 📌 Overview
 
-📌 A real .NET sample demonstrating how to invoke multimodal LLM workflows
+This sample demonstrates:
 
-🎯 Integration with LlmTornado SDK components (Chat, Audio, Images, Code)
+- Multimodal AI input (text + image + audio)
+- Integration with LlmTornado SDK
+- Basic agent-style orchestration
+- File handling (Base64 / byte arrays)
+- Console-based AI response output
 
-📂 Example usage of text, images, and audio support
+This is a learning/reference project — not a production-ready system.
 
-🧪 Reference patterns for building AI-powered features in your own .NET apps
+---
 
-Note: This is a sample project (not a full application) intended for learning and experimentation.
+## 🏗 Project Structure
 
-📁 Included Code
+```
+2026-LLMTornadoSample/
+│
+├── LLMTornadoSample.slnx
+├── LLMTornadoSample.Project/
+│   └── Program.cs
+└── .gitignore
+```
 
-LLMTornadoSample.slnx – .NET solution
+Main logic is implemented inside:
 
-LLMTornadoSample.Project/Program.cs – Console sample with multiple multimodal examples
+```
+LLMTornadoSample.Project/Program.cs
+```
 
-.gitignore
+---
 
-The main code shows how to:
+## 🚀 What the Sample Demonstrates
 
-Initialize agents
+- Creating a multimodal support agent
+- Reading image files
+- Reading audio files
+- Sending combined prompt + media to an LLM
+- Receiving and printing AI-generated solution output
 
-Load image and audio data
+---
 
-Send multimodal input to the model
+## 🧠 Example Usage (From Program.cs)
 
-Print AI solution output
-
-🚀 Features Demonstrated
-
-✔ Multimodal support (image + audio + text)
-✔ Integration with the LlmTornado AI SDK
-✔ Streaming response capabilities
-✔ Console output of AI assistant solutions
-✔ Base64 file handling
-✔ Multiple usage patterns (voice memo, screenshots, text prompts)
-
-🧠 Sample Usage
-
-Here’s an illustrative snippet from the sample app (Program.cs):
-
+```csharp
 var agent = new MultimodalSupportAgent("your-api-key");
 
 byte[] screenshot = await File.ReadAllBytesAsync("error-screenshot.jpg");
@@ -61,79 +64,15 @@ string solution = await agent.HandleSupportTicket(
 );
 
 Console.WriteLine(solution);
+```
 
+This example demonstrates:
 
-This shows basic multimodal support using an agent object to process text, images, and voice.
+- Passing text input
+- Passing image data
+- Passing audio data
+- Receiving structured AI output
 
-📦 Prerequisites
+---
 
-✔ .NET SDK installed (version supported by the project)
-✔ API key for your LLM provider (OpenAI, Anthropic, etc.)
-✔ Required dependencies installed via NuGet
-
-Before running the sample, set your API key (example using environment variables):
-
-export YOUR_API_KEY="your_llm_api_key_here"
-
-📌 How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/gitguy007/2026-LLMTornadoSample.git
-
-
-Navigate into the project folder:
-
-cd 2026-LLMTornadoSample
-
-
-Restore and build:
-
-dotnet restore
-dotnet build
-
-
-Run the sample:
-
-dotnet run --project LLMTornadoSample.Project
-
-🛠 Customizing
-
-You can customize the sample to:
-
-Use different LLM models (Azure, OpenAI, Claude, etc.)
-
-Add more multimodal workflows
-
-Integrate external data sources
-
-Build UI or a web API on top of this backend
-
-🧪 Testing
-
-There are no automated tests included by default. For production projects, add:
-
-Unit tests (e.g., xUnit or NUnit)
-
-Integration tests
-
-Mocking of LLM responses
-
-📖 Recommended Next Steps
-
-If you want to expand this sample, consider:
-
-✅ Adding RAG (Retrieval-Augmented Generation) pipelines using vectors
-✅ Building an agentic orchestration layer
-✅ Packaging the logic behind a REST API
-✅ Adding a UI (Blazor / ASP.NET) front end
-
-📄 License
-
-This sample is provided under the MIT License (check repository for the full license text if present).
-
-🧠 Acknowledgements
-
-The project uses LlmTornado, a provider-agnostic AI toolkit for .NET.
-
-This sample is intended as a hands-on learning resource.
+## ⚙️ Prerequisites
