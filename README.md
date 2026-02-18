@@ -18,6 +18,8 @@ This sample demonstrates:
 
 This is a learning/reference project — not a production-ready system.
 
+Sample reference article : https://dev.to/lofcz/migrating-to-a-multimodal-ai-framework-a-step-by-step-guide-for-c-developers-4k84
+
 ---
 
 ## 🏗 Project Structure
